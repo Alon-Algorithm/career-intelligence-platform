@@ -35,13 +35,30 @@ An AI-powered full-stack web application that analyzes CVs, extracts skills, and
 ## 🚀 Deployment
 
 ### Backend (Render)
-```bash
-cd backend
-pip install -r requirements.txt
-uvicorn main:app --host 0.0.0.0 --port 8000
 
-**Frontend (Render)**
-```bash
-cd frontend
-npm install
-npm run build
+1. Push your code to GitHub
+2. On Render, click "New +" → "Web Service"
+3. Connect your GitHub repository
+4. Configure:
+   - **Root Directory**: `backend`
+   - **Build Command**: `pip install -r requirements.txt`
+   - **Start Command**: `uvicorn main:app --host 0.0.0.0 --port $PORT`
+
+### Frontend (Render)
+
+1. On Render, click "New +" → "Static Site"
+2. Connect your GitHub repository
+3. Configure:
+   - **Root Directory**: `frontend`
+   - **Build Command**: `npm install && npm run build`
+   - **Publish Directory**: `build`
+4. Add environment variable:
+   - **Key**: `REACT_APP_API_URL`
+   - **Value**: `https://your-backend-url.onrender.com`
+
+## 🔧 Environment Variables
+
+### Backend (.env in backend folder)
+
+```env
+ENVIRONMENT=production
