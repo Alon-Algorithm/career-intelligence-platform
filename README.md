@@ -39,3 +39,8 @@ An AI-powered full-stack web application that analyzes CVs, extracts skills, and
 cd backend
 pip install -r requirements.txt
 uvicorn main:app --host 0.0.0.0 --port 8000
+
+### Frontend (Render)
+cd frontend
+npm install
+npm run build
