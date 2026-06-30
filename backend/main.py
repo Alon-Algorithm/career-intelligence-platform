@@ -33,7 +33,10 @@ app.add_middleware(
         "http://localhost:3000",
         "http://127.0.0.1:3000",
         "http://localhost:3001",
-        "http://127.0.0.1:3001"
+        "http://127.0.0.1:3001",
+        "https://career-intelligence-platform-1-xuy1.onrender.com",  # YOUR FRONTEND URL
+        "https://career-intelligence-api-v2.onrender.com",
+        "https://*.onrender.com"  # Allows all Render apps
     ],
     allow_credentials=True,
     allow_methods=["*"],
