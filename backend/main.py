@@ -419,10 +419,12 @@ if __name__ == "__main__":
     print("🌐 Starting server at http://localhost:8000")
     print("📚 API Docs at http://localhost:8000/docs")
     print("="*60)
-    
+    import os
+    port = int(os.environ.get("PORT", 8000))
     uvicorn.run(
         "main:app",
         host="0.0.0.0",
-        port=8000,
-        reload=True
+        port=port,
+        reload=False  # Important: Turn off reload in production
     )
+    
